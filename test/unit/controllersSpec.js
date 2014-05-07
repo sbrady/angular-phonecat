@@ -14,5 +14,12 @@ describe('PhoneCat controllers', function() {
       expect(scope.phones.length).toBe(3);
     }));
 
+    it('sets the name to world', inject(function($controller) {
+            var scope = {},
+                ctrl = $controller('PhoneListCtrl', {$scope:scope});
+
+            expect(scope.name).toBe("world");
+    }));
+
   });
 });

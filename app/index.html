@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="phonecatApp" ng-controller="PhoneListCtrl">
+<title ng-bind-template="Google Phone Gallery: {{query}}">Google Phone Gallery</title>
 <head>
   <meta charset="utf-8">
   <title>Google Phone Gallery</title>
@@ -8,7 +9,7 @@
   <script src="../bower_components/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
+<body>
 
   <div class="container-fluid">
     <div class="row">

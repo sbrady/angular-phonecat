@@ -10,7 +10,6 @@ describe('PhoneCat App', function() {
       browser.get('app/index.html');
     });
 
-
     it('should filter the phone list as user types into the search box', function() {
 
       var phoneList = element.all(by.repeater('phone in phones'));
@@ -25,5 +24,15 @@ describe('PhoneCat App', function() {
       query.sendKeys('motorola');
       expect(phoneList.count()).toBe(2);
     });
+
+    it('should display the current filter value in the title bar', function() {
+
+        expect(browser.getTitle()).toMatch(/Google Phone Gallery:\s*$/);
+
+        element(by.model('query')).sendKeys('nexus');
+
+        expect(browser.getTitle()).toMatch(/Google Phone Gallery: nexus$/);
+      });
+
   });
 });
